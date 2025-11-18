@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawsify Case Study | Sanjana Ganesh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #F9F6EE;
+      color: #4E443A;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #5a0b0b;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #f8eae7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #5a0b0b;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .mockup {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background-color: #5a0b0b;
+      color: #fff;
+      padding: 12px 28px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #7b1010;
+      box-shadow: 0 6px 20px rgba(90, 11, 11, 0.3);
+
+    }
+    .mockup {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8c7f70;
+      border-top: 1px solid #e8dfd5;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+    }
+    section {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* --- Case Study Code Section --- */
+.code-block {
+  margin-bottom: 60px;
+}
+
+.code-block h3 {
+  font-family: 'Playfair Display', serif;
+  color: #5a0b0b;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.code-block p {
+  color: #4E443A;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+
+.mockup {
+  width: 85%;
+  max-width: 1100px;
+  display: block;
+  margin: 0 auto 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.mockup:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Smaller code mockups */
+.code-block .mockup {
+  width: 55%;
+  max-width: 700px;
+  display: block;
+  margin: 20px auto 35px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.code-block .mockup:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: beige card background for code blocks */
+.code-block {
+  background-color: #f8f5f0;
+  padding: 40px 20px;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+/* Captions and headings */
+.code-block h3 {
+  font-family: 'Playfair Display', serif;
+  color: #5a0b0b;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.code-block p {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 15px auto;
+  color: #4E443A;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .mockup { width: 95%; }
+  .code-block .mockup { width: 90%; }
+  .code-block { padding: 25px 15px; }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pawsify</h1>
+    <p>A community-based app that connects dog owners and rescue organizations — built with Flutter and Firebase.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Pawsify is a mobile app designed to make pet care, rescue coordination, and community interaction simpler and more meaningful.
+        It allows dog owners to create profiles, track vaccinations and deworming, and connect with other pet parents or foster homes.
+        The app also features rescue listings, adoption channels, and donation tracking.
+      </p>
+    </section>
+
+    <section>
+      <h2>Problem</h2>
+      <p>
+        Pet owners and rescue organizations lacked a unified, organized space for communication and tracking. 
+        Existing platforms were scattered — some for adoption, some for community, and others for tracking — 
+        making it hard to manage everything in one place.
+      </p>
+    </section>
+
+    <section>
+      <h2>Solution</h2>
+      <p>
+        I conceptualized and built Pawsify — a cross-platform Flutter app that combines these features in a single intuitive experience.
+        Users can manage dog health data, find playdates, coordinate rescues, and follow adoption stories — all in one cohesive interface.
+      </p>
+    </section>
+
+    <section>
+      <h2>My Role & Process</h2>
+      <ul>
+        <li>Originated the concept and led a 4-member team as project lead.</li>
+        <li>Designed the full UI in Figma, including logo, color palette, and app flow.</li>
+        <li>Handled Firebase setup (Firestore, Authentication, and Storage).</li>
+        <li>Directed backend integration and ensured all features followed the same design consistency.</li>
+        <li>Managed team coordination and deadlines, stepping in to handle unfinished development parts.</li>
+      </ul>
+    </section>
+
+    
+
+    <section>
+  <h2>UI Showcase</h2>
+  <p>
+    The Pawsify app’s UI blends warmth and clarity — using soft neutrals, intuitive layouts, 
+    and familiar navigation to make connecting with other dog owners and rescue groups effortless.
+  </p>
+
+  <img 
+    src="pawsify-ui-screens.png" 
+    alt="Pawsify app mockup showing Lost & Found, Matchmaking, and Connect screens" 
+    class="mockup">
+  
+  <p style="text-align:center; color:#5a0b0b; font-weight:600; margin-top:10px;">
+    Lost & Found · Matchmaking · Connect Features
+  </p>
+</section>
+<section>
+  <h2>Code Highlights</h2>
+  <p>
+    Below are three key snippets from <strong>Pawsify</strong> that demonstrate backend integration, 
+    structured data modeling, and feature logic. Each showcases a core piece of the app’s functionality — 
+    from image uploads to Firestore models and real-world emergency handling.
+  </p>
+
+  <!-- 1️⃣ Firebase Upload Function -->
+  <div class="code-block">
+    <h3>Firebase Upload Function</h3>
+    <p>This function enables users to pick images from their gallery and upload them securely to Firebase Storage under their authenticated user ID.</p>
+    <img src="firebase_storage_service.png" alt="Firebase image upload function in Dart" class="mockup">
+  </div>
+
+  <!-- 2️⃣ Donation Model -->
+  <div class="code-block">
+    <h3>Structuring Donations in Firestore</h3>
+    <p>The <code>Donation</code> model defines how Firestore data is mapped to the app — ensuring consistent, safe handling of user donations, timestamps, and identifiers.</p>
+    <img src="donation_model.png" alt="Donation model Firestore mapping in Dart" class="mockup">
+  </div>
+
+  <!-- 3️⃣ SOS Dialog -->
+  <div class="code-block">
+    <h3>Emergency SOS Dialog</h3>
+    <p>This feature gives users instant access to the national Animal Helpline (1962) via an alert dialog and phone launcher, reflecting Pawsify’s focus on real-world pet safety.</p>
+    <img src="homepage.png" alt="Flutter SOS dialog function in Dart" class="mockup">
+  </div>
+</section>
+<section>
+      <h2>Challenges & Learnings</h2>
+      <p>
+        Balancing leadership and implementation was challenging — I had to guide team members while completing core development myself.
+        I also learned to translate my design vision into real, scalable Flutter components, handle async Firebase data efficiently,
+        and collaborate across different skill levels.
+      </p>
+      <p>
+        This project taught me to think like a full product owner — from ideation to deployment — combining empathy, design, and development seamlessly.
+      </p>
+    </section>
+    <a href="index.html#projects" class="btn-back">← Back to Portfolio</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sanjana Ganesh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

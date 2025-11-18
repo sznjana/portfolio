@@ -1,0 +1,182 @@
+# Creating a standalone HTML mockup that visually represents the Figma frames:
+html = """<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>7 Pillar Candles — Figma Mockup Preview</title>
+<style>
+  :root{
+    --bg:#F9F6EE; --terr:#5A0B0B; --text:#4E443A; --muted:#6A6056; --accent:#587D71;
+  }
+  body{font-family: Lato, Arial, sans-serif; background:var(--bg); color:var(--text); padding:30px;}
+  .frame{background:#fff; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.06); margin:24px auto; max-width:1200px; padding:28px;}
+  h1{font-family:'Playfair Display', serif; color:var(--terr); margin:0 0 12px; font-size:34px;}
+  .hero{display:flex; gap:24px; align-items:center;}
+  .hero .left{flex:1}
+  .hero .right{flex:1}
+  .hero .img-placeholder{height:320px; border-radius:12px; background:linear-gradient(135deg,#efe6df,#e7dbcf); display:flex;align-items:center;justify-content:center;color:#cbb9ac;font-weight:700}
+  .lead{color:var(--muted); margin:12px 0 20px;}
+  .btn{display:inline-block;padding:10px 18px;border-radius:10px;background:var(--terr);color:#fff;text-decoration:none;font-weight:700}
+  /* grid */
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px}
+  .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.05); display:flex; flex-direction:column}
+  .card .img{height:220px;background:linear-gradient(135deg,#f5efe8,#efe7df);display:flex;align-items:center;justify-content:center;color:#c9b9ab;font-weight:700}
+  .card .info{padding:14px;display:flex;justify-content:space-between;align-items:center}
+  .price{color:var(--terr);font-weight:800}
+  /* product detail */
+  .product{display:flex;gap:20px;align-items:flex-start}
+  .product .bigimg{flex:1;height:420px;border-radius:12px;background:linear-gradient(135deg,#f8efe7,#efe6de);display:flex;align-items:center;justify-content:center;color:#c9b9ab;font-weight:700}
+  .product .meta{flex:1;padding:12px}
+  .muted{color:var(--muted)}
+  .specs{margin-top:12px;color:var(--muted);font-size:14px}
+  .qty{margin-top:12px}
+  .add{background:var(--terr);color:#fff;padding:10px 16px;border-radius:10px;border:none;font-weight:700;margin-top:12px}
+  /* mobile mock */
+  .mobiles{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .phone{width:220px;background:#fff;border-radius:28px;padding:14px;box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+  .phone .screen{height:420px;background:linear-gradient(180deg,#fff,#faf6f0);border-radius:12px;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
+  /* design system */
+  .swatches{display:flex;gap:12px;align-items:center}
+  .sw{width:56px;height:56px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+  .tokens{display:flex;gap:18px;margin-top:12px;flex-wrap:wrap}
+  /* responsive */
+  @media(max-width:980px){ .hero{flex-direction:column} .grid{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:560px){ .grid{grid-template-columns:1fr} .mobiles{flex-direction:column;align-items:center} }
+</style>
+</head>
+<body>
+
+<div class="frame" id="hero-frame">
+  <div class="hero">
+    <div class="left">
+      <h1>Hand-poured calm.</h1>
+      <p class="lead">Crafted with intention and light. Hand-poured, small-batch candles that bring calm and ritual to your space.</p>
+      <a class="btn" href="#products">Shop Collection</a>
+    </div>
+    <div class="right">
+      <div class="img-placeholder">Hero Lifestyle Photo</div>
+    </div>
+  </div>
+</div>
+
+<div class="frame" id="grid-frame">
+  <h2 style="font-family:'Playfair Display', serif; color:var(--terr); margin-bottom:8px">Product Grid</h2>
+  <p class="muted">A clean, image-first grid highlighting product names and prices.</p>
+  <div class="grid" id="products">
+    <div class="card">
+      <div class="img">Lavender & Cedar</div>
+      <div class="info"><div>Lavender & Cedar</div><div class="price">₹699</div></div>
+    </div>
+    <div class="card">
+      <div class="img">Amber & Saffron</div>
+      <div class="info"><div>Amber & Saffron</div><div class="price">₹799</div></div>
+    </div>
+    <div class="card">
+      <div class="img">Oud & Patchouli</div>
+      <div class="info"><div>Oud & Patchouli</div><div class="price">₹849</div></div>
+    </div>
+    <div class="card">
+      <div class="img">Rose & Sandal</div>
+      <div class="info"><div>Rose & Sandal</div><div class="price">₹699</div></div>
+    </div>
+    <div class="card">
+      <div class="img">Citrus & Clove</div>
+      <div class="info"><div>Citrus & Clove</div><div class="price">₹649</div></div>
+    </div>
+    <div class="card">
+      <div class="img">Fig & Vetiver</div>
+      <div class="info"><div>Fig & Vetiver</div><div class="price">₹749</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="frame" id="product-frame">
+  <h2 style="font-family:'Playfair Display', serif; color:var(--terr); margin-bottom:8px">Product Detail</h2>
+  <div class="product">
+    <div class="bigimg">Product Photo</div>
+    <div class="meta">
+      <h2 style="font-size:28px; margin:0">Lavender & Cedar</h2>
+      <p class="muted">A calming blend of lavender top notes with warm cedar and vetiver base. Hand-poured soy wax — recycled glass jar.</p>
+      <p class="specs">40+ hrs burn · 220g · Free sample wick trimmer</p>
+      <div class="qty">
+        <label for="q">Qty</label>
+        <select id="q"><option>1</option><option>2</option><option>3</option></select>
+      </div>
+      <button class="add">Add to Cart — ₹699</button>
+    </div>
+  </div>
+</div>
+
+<div class="frame" id="mobile-frame">
+  <h2 style="font-family:'Playfair Display', serif; color:var(--terr); margin-bottom:8px">Mobile Views</h2>
+  <div class="mobiles">
+    <div class="phone">
+      <div class="screen">
+        <div>
+          <div style="height:140px;background:linear-gradient(180deg,#efe9e3,#fff);border-radius:10px;display:flex;align-items:center;justify-content:center">Mobile Hero</div>
+          <h3 style="margin:12px 0 6px">Shop Collection</h3>
+          <div style="display:flex;gap:8px;">
+            <div style="flex:1;height:80px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center">Product</div>
+            <div style="flex:1;height:80px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center">Product</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button style="flex:1;padding:12px;border-radius:8px;background:var(--terr);color:#fff;border:none">Add to cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div style="height:220px;background:linear-gradient(180deg,#efe9e3,#fff);border-radius:10px;display:flex;align-items:center;justify-content:center">Product Photo</div>
+        <div>
+          <h3 style="margin:8px 0 4px">Lavender & Cedar</h3>
+          <p style="color:var(--muted);font-size:14px;margin:0">Calming notes — 40+ hrs</p>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button style="flex:1;padding:10px;border-radius:8px;background:#fff;border:1px solid #e6dfd7">View details</button>
+          <button style="flex:1;padding:10px;border-radius:8px;background:var(--terr);color:#fff;border:none">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="frame" id="design-frame">
+  <h2 style="font-family:'Playfair Display', serif; color:var(--terr); margin-bottom:8px">Design System</h2>
+  <div class="swatches">
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="sw" style="background:var(--bg)"></div><div style="font-size:14px;color:var(--muted)">#F9F6EE</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="sw" style="background:var(--terr)"></div><div style="font-size:14px;color:var(--muted)">#5A0B0B</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="sw" style="background:var(--text)"></div><div style="font-size:14px;color:var(--muted)">#4E443A</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="sw" style="background:var(--muted)"></div><div style="font-size:14px;color:var(--muted)">#6A6056</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <div class="sw" style="background:var(--accent)"></div><div style="font-size:14px;color:var(--muted)">#587D71</div>
+    </div>
+  </div>
+
+  <div class="tokens" style="margin-top:18px">
+    <div style="min-width:220px">
+      <p style="margin:0;font-weight:700">Buttons</p>
+      <div style="margin-top:8px"><button class="btn">Primary</button> <button style="padding:8px 12px;border-radius:8px;border:1px solid #C4D0CB">Secondary</button></div>
+    </div>
+    <div style="min-width:220px">
+      <p style="margin:0;font-weight:700">Typography</p>
+      <p style="margin:6px 0 0;font-size:18px">Heading – Playfair Display 36px</p>
+      <p style="margin:4px 0 0;color:var(--muted)">Body – Lato 18px</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+

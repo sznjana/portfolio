@@ -12,392 +12,340 @@
 
   <meta name="description" content="Portfolio of Sanjana Ganesh — Creative developer building meaningful digital experiences through technology, empathy, and design.">
 
-  <style>
-    :root {
-      --bg: #F9F6EE;
-      --text: #4E443A;
-      --accent: #5a0b0b;
-      --muted: #6a6056;
-      --soft: #EAE2D6;
-      --max-width: 1100px;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Lato', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    img { max-width: 100%; height: auto; }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-    a { text-decoration: none; color: inherit; }
-
-    /* Navbar */
-    .navbar {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(8px);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--soft);
-    }
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    /* Hamburger Button */
-    .hamburger {
-      display: none;
-      font-size: 28px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    /* NAV LINKS */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      transition: 0.3s ease;
-    }
-
-    .nav-links a {
-      font-weight: 600;
-      position: relative;
-      padding-bottom: 3px;
-    }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: 0.3s ease;
-    }
-    .nav-links a:hover::after { width: 100%; }
-
-
-    /* HERO A2 PREMIUM */
-    #home {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .profile-image {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 6px solid white;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-      margin-bottom: 25px;
-      transition: 0.3s ease;
-    }
-    .profile-image:hover {
-      transform: scale(1.03);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-    }
-    #home h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8rem;
-      color: var(--accent);
-      letter-spacing: -0.5px;
-      margin-bottom: 10px;
-    }
-    #home h3 {
-      font-family: 'Lato', sans-serif;
-      font-size: 1.3rem;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-    #home p {
-      max-width: 640px;
-      margin: 0 auto 28px;
-      font-size: 1.2rem;
-      color: var(--muted);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 30px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 6px 18px rgba(90,11,11,0.35);
-    }
-    .btn-primary:hover {
-      background: #7b1010;
-      transform: translateY(-3px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--soft);
-      color: var(--accent);
-    }
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      background: #fff4f4;
-    }
-
-    section { padding: 70px 0; }
-
-    /* Projects */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
-    .project-card {
-      background: white;
-      border-radius: 14px;
-      overflow: visible;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.07);
-      transition: 0.3s ease;
-    }
-
-    .project-card img { height: 240px; object-fit: cover; }
-
-    .project-card-content { padding: 30px; }
-
-    .tech-stack span {
-      background: var(--bg);
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      border: 1px solid var(--soft);
-      color: var(--muted);
-      margin: 4px;
-      display: inline-block;
-    }
-
-    /* ABOUT */
-    #about .container {
-      background: white;
-      border-radius: 14px;
-      padding: 50px;
-      box-shadow: 0 14px 38px rgba(0,0,0,0.07);
-    }
-
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-    .skill-card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-      font-weight: 700;
-      transition: 0.3s ease;
-    }
-
-    footer { text-align: center; padding: 40px; color: var(--muted); }
-    .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  z-index: 2000;
+ <style>
+:root{
+  --bg: #F9F6EE;
+  --text: #4E443A;
+  --accent: #5a0b0b;
+  --muted: #6a6056;
+  --soft: #EAE2D6;
+  --max-width: 1100px;
 }
 
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background: var(--text);
-  border-radius: 10px;
-  display: block;
-  transition: 0.35s ease;
-  transform-origin: center;
+/* RESET + BASE */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Lato',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
 }
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+section{padding:70px 0;}
 
-/* --- ANIMATION: SLIDE TO X --- */
+/* TYPOGRAPHY */
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--accent);}
+h1{font-size:3.4rem;margin-bottom:8px;}
+h2{font-size:2.4rem;margin-bottom:18px;text-align:center;}
+p{color:var(--muted);font-size:1.05rem;margin-bottom:14px;}
 
-.hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+/* NAVBAR */
+.navbar{
+  position:sticky;top:0;z-index:2000;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--soft);
+  padding:18px 0;
 }
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(10px);
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-/* DROPDOWN CONTAINER */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* MAIN DROPDOWN BUTTON */
-.dropdown-btn {
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-/* DROPDOWN MENU */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 110%;
-  left: 0;
-  background: white;
-  border: 1px solid var(--soft);
-  border-radius: 10px;
-  min-width: 180px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  padding: 10px 0;
-  z-index: 9999;  /* ← ADD THIS */
-}
-/* VISIBLE MENU */
-.dropdown.show .dropdown-menu {
-  display: block;
-}
-
-/* DROPDOWN LINKS */
-.dropdown-menu a {
-  display: block;
-  padding: 10px 18px;
-  color: var(--text);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.2s ease;
-}
-
-.dropdown-menu a:hover {
-  background: #fff4f4;
-  color: var(--accent);
-}
-
-/* SMOOTH ANIMATION */
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-    /* ---------------- MOBILE NAV ---------------- */
-    @media(max-width: 768px) {
-
-      .hamburger {
-  display: flex;
-}
-
-.nav-links {
-  position: fixed;
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:1.4rem;font-weight:700;}
+.navbar {
+  position: sticky;
   top: 0;
-  right: -100%;
-  height: 100vh;
-  width: 70%;
-  background: white;
-  flex-direction: column;
-  padding-top: 120px;
-  gap: 30px;
-  text-align: center;
-  transition: 0.35s ease;
-  box-shadow: -2px 0 20px rgba(0,0,0,0.15);
+  z-index: 9999 !important; /* raised */
+}
+.hamburger {
+  z-index: 10000 !important; /* ABOVE EVERYTHING */
+  position: relative; /* ensures new stacking context */
+}
+.hamburger span {
+  background: var(--text) !important; /* force visible */
 }
 
-.nav-links.open {
-  right: 0;
+/* DESKTOP NAV */
+.desktop-nav{
+  list-style:none;
+  display:flex;
+  gap:28px;
+}
+.desktop-nav a{
+  font-weight:600;
+  position:relative;
+  padding-bottom:3px;
+}
+.desktop-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:0.25s ease;
+}
+.desktop-nav a:hover::after{width:100%;}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:10px;
+  font-weight:700;
+  transition:0.25s ease;
+}
+.btn-primary{
+  background:var(--accent);color:#fff;
+  box-shadow:0 6px 18px rgba(90,11,11,0.35);
+}
+.btn-primary:hover{transform:translateY(-3px);background:#7b1010;}
+
+.btn-secondary{
+  border:2px solid var(--soft);
+  background:transparent;
+  color:var(--accent);
+}
+.btn-secondary:hover{
+  background:#fff4f4;border-color:var(--accent);
 }
 
-      .project-card img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    transition: opacity 0.3s ease;
-    background: white; /* prevents weird gaps */
-    padding: 4px;      /* keeps image from touching borders */
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:6px;
+  z-index:3001;
+}
+.hamburger span{
+  width:28px;height:3px;
+  background:var(--text);
+  border-radius:8px;
+  transition:0.35s ease;
+  transform-origin:center;
+}
+/* X animation */
+.hamburger.active span:nth-child(1){transform:translateY(9px) rotate(45deg);}
+.hamburger.active span:nth-child(2){opacity:0;transform:translateX(10px);}
+.hamburger.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;
+  top:0;right:-100%;
+  width:70%;height:100vh;
+  background:#fff;
+  padding-top:120px;
+  padding-left:30px;
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+  transition:0.35s ease;
+  box-shadow:-4px 0 25px rgba(0,0,0,0.12);
+  z-index:3000;
+}
+.mobile-menu.open{right:0;}
+.mobile-menu a{
+  font-size:1.2rem;
+  font-weight:600;
+  color:var(--accent);
+}
+
+/* HERO */
+#home{text-align:center;padding-top:80px;}
+.profile-image{
+  width:190px;height:190px;border-radius:50%;
+  object-fit:cover;border:6px solid #fff;
+  box-shadow:0 12px 32px rgba(0,0,0,0.12);
+  margin:0 auto 20px;
+}
+
+/* PROJECTS */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+.project-card{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.07);
+  transition:0.25s ease;
+}
+.project-card:hover{transform:translateY(-6px);}
+.project-card img{
+  border-top-left-radius:14px;
+  border-top-right-radius:14px;
+  height:240px;
+  object-fit:cover;
+}
+.project-card-content{padding:24px;}
+.tech-stack span{
+  background:var(--bg);
+  border:1px solid var(--soft);
+  border-radius:12px;
+  padding:6px 12px;
+  font-size:.9rem;
+  margin-right:6px;
+}
+
+/* DROPDOWN */
+.dropdown{position:relative;display:inline-block;}
+.dropdown-btn{cursor:pointer;}
+.dropdown-menu{
+  position:absolute;
+  top:110%;
+  left:0;
+  min-width:200px;
+  background:#fff;
+  border-radius:10px;
+  border:1px solid var(--soft);
+  display:none;
+  padding:8px 0;
+  box-shadow:0 12px 35px rgba(0,0,0,0.12);
+}
+.dropdown.show .dropdown-menu{display:block;}
+
+/* ABOUT */
+.about-wrapper{
+  display:flex;
+  align-items:center;
+  gap:50px;
+}
+.about-wrapper img{
+  max-width:360px;
+  border-radius:14px;
+  box-shadow:0 18px 48px rgba(0,0,0,0.08);
+}
+.about-wrapper div{flex:1;}
+
+/* SKILLS (scrollable) */
+.skills-wrapper{
+  position:relative;
+  margin:20px auto;
+  max-width:100%;
+}
+.skills-scroll{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  white-space:nowrap;
+  padding:15px 0;
+}
+.skills-scroll::-webkit-scrollbar{display:none;}
+.skills-scroll span{
+  padding:12px 22px;
+  background:#fff;
+  border-radius:12px;
+  border:1px solid var(--soft);
+  font-weight:700;
+  white-space:nowrap;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:0.25s ease;
+}
+.skills-scroll span:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(0,0,0,0.12);
+}
+.fade-left, .fade-right{
+  position:absolute;
+  top:0;
+  width:50px;
+  height:100%;
+  pointer-events:none;
+}
+.fade-left{left:0;background:linear-gradient(to right,var(--bg),transparent);}
+.fade-right{right:0;background:linear-gradient(to left,var(--bg),transparent);}
+.drag-hint{
+  width:40px;height:6px;
+  background:var(--muted);
+  opacity:0.25;
+  border-radius:4px;
+  margin:8px auto;
+  animation:dragMove 1.8s infinite ease-in-out;
+}
+@keyframes dragMove{
+  0%{transform:translateX(0);opacity:.3;}
+  50%{transform:translateX(15px);opacity:.6;}
+  100%{transform:translateX(0);opacity:.3;}
+}
+
+/* FOOTER */
+footer{text-align:center;padding:40px;color:var(--muted);}
+
+/* MOBILE */
+@media(max-width:768px){
+  .desktop-nav{display:none;}
+  .hamburger{display:flex;}
+
+  .project-grid{
+    grid-template-columns:1fr;
   }
 
-  .project-card img:hover {
-    opacity: 0.95;
+  .about-wrapper{
+    flex-direction:column;
+    text-align:center;
   }
-  
+  .about-wrapper img{width:100%;max-width:360px;margin-bottom:20px;}
+} /* FINAL HAMBURGER FIX — FORCES X ANIMATION */
+
+
+/* FINAL HAMBURGER FIX — FORCES X ANIMATION */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg) !important;
 }
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        background: white;
-        flex-direction: column;
-        gap: 30px;
-        padding-top: 120px;
-        text-align: center;
-        transition: 0.3s ease;
-        box-shadow: -2px 0 20px rgba(0,0,0,0.2);
-      }
+.hamburger.active span:nth-child(2) {
+  opacity: 0 !important;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg) !important;
+}
 
-      .nav-links.open {
-        right: 0;
-      }
+</style>
 
-      .project-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      #home h1 { font-size: 3rem; }
-    
-  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="container nav-inner">
+  <div class="container nav-inner">
 
-      <a href="#home" class="nav-logo">Portfolio</a>
+    <a href="#home" class="nav-logo">Portfolio</a>
 
-      <!-- Hamburger Button -->
-      <button class="hamburger" onclick="toggleMenu()">
+    <!-- Desktop Nav -->
+    <ul class="nav-links desktop-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
 </button>
 
-      <!-- NAV LINKS FOR MOBILE -->
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  </div>
+</nav>
 
-    </div>
-  </nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <a href="#home">Home</a>
+  <a href="#projects">Projects</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</div>
+
 
 
   <!-- HERO -->
@@ -478,40 +426,55 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="container">
-      <div style="display:flex;flex-wrap:wrap;gap:50px;align-items:center;">
-        <img src="dp.jpeg" style="width:360px;border-radius:14px;">
-        <div>
-          <h2 style="color:var(--accent);font-family:'Playfair Display',serif;">About Me</h2>
-          <p style="color:var(--muted);">Hi, I'm <strong style="color:var(--accent)">Sanjana Ganesh</strong> someone who loves soft aesthetics, clean layouts, and meaningful technology.
-My journey blends creativity and logic—I enjoy designing interfaces that feel calm and beautiful, and then writing the code that makes them functional and real.
+  <div class="container">
+    <div class="about-wrapper">
+      
+      <img src="dp.jpeg" alt="Sanjana">
 
-I specialize in Flutter, UI/UX, and front-end development, and I love projects that involve purpose, design thinking, or community impact. My biggest project, Pawsify, grew from my love for dogs and my desire to build tech that helps people and animals.
+      <div>
+        <h2 style="color:var(--accent);font-family:'Playfair Display',serif;">About Me</h2>
+          <p style="color:var(--muted);">Hi, I'm <strong style="color:var(--accent)">Sanjana Ganesh</strong>  — a developer, designer, and someone who genuinely loves building calm, meaningful digital experiences. I’m drawn to soft aesthetics, clean layouts, and thoughtful technology that feels good to use. </p>
 
-Right now, I’m focused on leveling up my development skills, growing my portfolio, and finding an internship opportunity for January 2026 where I can learn, create, and build with intention.</p>
+<p>My journey is a blend of creativity and logic. I enjoy taking an idea, shaping its visual personality, and then turning it into a real, functional product. Whether it’s an app, a website, or a tiny interface detail — I always start with emotion and clarity. How should it feel? How should it guide the user? How can I make it gentle, intuitive, and beautiful?</p>
+
+<p>I specialize in Flutter, front-end development, and UI/UX design, with a strong interest in user-centric systems. My biggest project, Pawsify, grew from my love for dogs and my wish to use tech to support pet owners, fosters, and rescue communities. It taught me product thinking, teamwork, architecture, and how to shape a digital experience from scratch.</p>
+
+<p>Right now, I’m focusing on improving my development craft, building a strong portfolio, and finding an internship opportunity for January 2026 where I can grow, contribute, and work with a team that values detail, empathy, and design-led development.</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <h2 style="text-align:center; color:var(--accent); font-family:'Playfair Display',serif;">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">Flutter</div>
-        <div class="skill-card">Dart</div>
-        <div class="skill-card">Firebase</div>
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">Figma</div>
-        <div class="skill-card">Git & GitHub</div>
-      </div>
-    </div>
-  </section>
+ <h2 style="text-align:center; color:var(--accent); font-family:'Playfair Display',serif;">Skills</h2>
 
+<div class="skills-wrapper">
+  <div class="fade-left"></div>
+
+  <div class="skills-scroll">
+    <span>Flutter</span>
+    <span>Dart</span>
+    <span>Firebase</span>
+    <span>JavaScript</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Python</span>
+    <span>Java</span>
+    <span>C</span>
+    <span>SQL</span>
+    <span>Git & GitHub</span>
+    <span>VS Code</span>
+    <span>Figma</span>
+    <span>Canva</span>
+    <span>UI/UX</span>
+    <span>Design & Aesthetics</span>
+    <span>Content Writing</span>
+  </div>
+
+  <div class="fade-right"></div>
+</div>
+
+<div class="drag-hint"></div>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -520,7 +483,7 @@ Right now, I’m focused on leveling up my development skills, growing my portfo
       <p style="color:var(--muted);">Whether it's a project, collaboration, or opportunity — I’d love to connect.</p>
       <div style="display:flex;justify-content:center;gap:20px;">
         <a href="mailto:sanjanaganesh2004@gmail.com" class="btn btn-primary">Email Me</a>
-        <a href="https://www.linkedin.com/in/sanjana-ganesh-a8701b395" class="btn btn-secondary">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/sanjana004" class="btn btn-secondary">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -531,34 +494,21 @@ Right now, I’m focused on leveling up my development skills, growing my portfo
 
   <!-- SCRIPT -->
  <script>
-  function toggleMenu() {
-    const menu = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger');
-    menu.classList.toggle('open');
-    hamburger.classList.toggle('active');
-  }
+function toggleMenu() {
+  const burger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.mobile-menu');
 
-  // CLOSE HAMBURGER MENU WHEN LINK CLICKED
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.remove('open');
-      document.querySelector('.hamburger').classList.remove('active');
-    });
-  });
+  burger.classList.toggle('active');
+  menu.classList.toggle('open');
+}
 
-  // DROPDOWN LOGIC
-  document.querySelectorAll('.dropdown-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const dropdown = this.parentElement;
-      dropdown.classList.toggle('show');
-    });
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.mobile-menu').classList.remove('open');
+    document.querySelector('.hamburger').classList.remove('active');
   });
+});
 
-  // CLOSE DROPDOWN WHEN CLICKING OUTSIDE
-  window.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
-  });
 </script>
 
 </body>
